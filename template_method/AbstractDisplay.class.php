@@ -1,26 +1,25 @@
 <?php
-
-require_once "AbstractDisplay.class.php";
-
-class ListDisplay extends AbstractDisplay
+abstract class AbstractDisplay
 {
-
-	protected function displayHeader()
+	private $data;
+	public function __construct($data)
 	{
-		echo "<dl>";
-	}
-
-	protected function displayBody()
-	{
-		foreach ($this->getData() as $key => $value) {
-			echo "<dt>Item{$key}</dt>";
-			echo "<dd>{$value}</dd>";
+		if(!is_array($data)){
+			$data = array($data);
 		}
+		$this->data = $data;
 	}
-
-	protected function displayFooter()
+	public function display()
 	{
-		echo "</dl>";
+		$this->displayHeader();
+		$this->displayBody();
+		$this->displayFooter();
 	}
-
+	public function getData()
+	{
+		return $this->data;
+	}
+	protected abstract function displayHeader();
+	protected abstract function displayBody();
+	protected abstract function displayFooter();
 }
