@@ -2,6 +2,8 @@
 
 require_once "AbstractDisplay.class.php";
 
+// concreate（具象）class
+// table表記パターン
 class TableDisplay extends AbstractDisplay
 {
 

@@ -19,6 +19,7 @@ abstract class AbstractDisplay
 	{
 		return $this->data;
 	}
+	// header,body,footerの実装は具象クラスに任せる
 	protected abstract function displayHeader();
 	protected abstract function displayBody();
 	protected abstract function displayFooter();
