@@ -12,7 +12,7 @@ class ItemDao
 
 		$dummy = fgets($fp, 4096);
 		$this->items = array();
-		while ($buffer = fgets($fp, 4096) {
+		while ($buffer = fgets($fp, 4096)) {
 			$item_id = trim(substr($buffer, 0, 10));
 			$item_name = trim(substr($buffer,10, 20));
 			$item_price = trim(substr($buffer, 30));
@@ -25,7 +25,7 @@ class ItemDao
 	}
 
 	public static function getInstance(){
-		i(!isset(self::$instance)){
+		if(!isset(self::$instance)){
 			self::$instance = new ItemDao();
 		}
 		return self::$instance;
@@ -42,7 +42,7 @@ class ItemDao
 
 	public function setAside(OrderItem $order_item)
 	{
-		echo $order_item->getItem()->getName()."の在庫引当を行いました";
+		echo $order_item->getItem()->getName()."の在庫引当を行いました<br />";
 	}
 
 	public final function __clone(){
