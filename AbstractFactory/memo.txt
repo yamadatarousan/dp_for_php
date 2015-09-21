@@ -1,0 +1,21 @@
+クライアント
+* abstract_factory
+↓
+* DbFactory | * MockFactory (Polymorphism)
+	interface createItemDao
+	interface createOrderDao
+↓
+* ItemDao
+	interface ItemDao -> findById
+	db select datas add $items propety
+* OrderDao
+	interface OrderDao -> findById
+	db select datas add $orders propety
+↓
+* Item
+* Order
+	base data structure
+
+point
+インターフェースをかますことで必須構造を共有してる
+
