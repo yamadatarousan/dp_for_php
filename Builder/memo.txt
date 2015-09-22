@@ -1,0 +1,16 @@
+何を生成するか、と、どのように生成するかを分けている
+
+client
+	何を生成するかを決定→RssNewsBuilder
+↓
+director.class
+	argumentのbuilderがNewsBuilderClassであることをチェックしてるのがぽいんと
+	名前の通り決められた方向に進んでいるかをチェックして作業指示を出す
+↓
+builder interface
+	APIの形式を定義
+	というかAPIはapplication programing interfaceなのだからこれがAPI
+	directorからconcreateクラスを隠蔽
+↓
+concreate builder
+	APIを元に実装された処理
