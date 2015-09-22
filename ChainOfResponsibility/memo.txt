@@ -1,0 +1,5 @@
+*ValidationClassのオブジェクトを入れ子にしている
+abstract ValidationHandlerの中にnext_handlerプロパティを持ってそこに入れ子のオブジェクトを格納
+getNextHandlerで次のhandlerがあるかチェックしてあればvalidate
+abstract Validationでnext_handlerを持ってることがポイントっぽい
+これの次、という抽象的な処理をうまく実装してる
