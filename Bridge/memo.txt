@@ -1,0 +1,30 @@
+何をするのか、と、どうやって実現するのかの具体的な手順についてわけて設計する
+
+listing系クラス
+→何をするのか
+
+DataSource系クラス
+→どうやって実現するのか
+
+たとえば
+食事をする場合
+・食材を調理する
+・食器を用意する
+・食器を洗う
+のような、一連の処理がある。
+
+何をするか（Listing)の部分には
+どうやっては含めずに
+例えば
+function cooking
+	→DataSource内の同名メソッドを呼び出す
+function trayService
+	→DataSource内の同名メソッドを呼び出す
+function washing
+	→DataSource内の同名メソッドを呼び出す
+みたいな作りにしておく。
+
+
+具体的な手続きはすべてDataSource系クラスの内に書く。
+DataSource.classには手続きの雛形を定義（interfece)。
+FileDataSource.class内で具体的な実装。
